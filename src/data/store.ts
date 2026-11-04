@@ -1,6 +1,6 @@
 import type { Category } from '../types/shop';
 
-export const PICKUP_LOCATION = 'Block 9 Foyer';
+export const PICKUP_LOCATION = 'Block 9 Foyer (Not Real)🫣';
 export type ShopCategoryId = 'all' | Category | 'more';
 type ShopCategory =
   | { id: 'all' | Category; label: string; availability: 'available' }
