@@ -12,7 +12,6 @@ A campus merchandise shopping demo built with **Expo, React Native, and TypeScri
 | :-----------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
 | <img src="docs/screenshots/shop.png" width="240" alt="Shop with KLUST collection and category filters"> | <img src="docs/screenshots/product-details.png" width="240" alt="Heritage Tee colour and size selection"> | <img src="docs/screenshots/checkout.png" width="240" alt="Guest checkout with fictional contact details"> |
 
-## What you can try
 
 - Light theme with blue accents, phone-width layouts, and inputs sized to avoid automatic mobile focus zoom.
 - Search, category filtering, and featured or price sorting across **eight T-shirts and four mugs**.
