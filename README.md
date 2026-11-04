@@ -1,6 +1,5 @@
 # KLUST Campus Store
 # (CSC 3563 MOBILE PROGRAMMING ASSIGNMENT)
-(Demo only)
 
 A campus merchandise shopping app built with **Expo, React Native, and TypeScript**. Discover twelve T-shirts and mugs, choose your colours and sizes, and complete a simulated pickup order.
 
