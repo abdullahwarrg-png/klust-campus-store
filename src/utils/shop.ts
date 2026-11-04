@@ -36,10 +36,6 @@ export function validateCustomer(customer: Customer): Partial<Record<keyof Custo
   const errors: Partial<Record<keyof Customer, string>> = {};
   if (customer.name.trim().length < 2)
     errors.name = 'Enter your full name (at least 2 characters).';
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customer.email.trim()))
-    errors.email = 'Enter a valid email address.';
-  const digits = customer.phone.replace(/[\s()+-]/g, '');
-  if (!/^\d{9,15}$/.test(digits)) errors.phone = 'Enter a phone number with 9–15 digits.';
   return errors;
 }
 

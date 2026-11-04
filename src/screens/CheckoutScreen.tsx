@@ -121,16 +121,16 @@ export function CheckoutScreen({
             },
             {
               key: 'email',
-              label: 'Email address',
+              label: 'Email address (optional)',
               placeholder: 'you@example.com',
-              keyboard: 'email-address',
+              keyboard: 'default',
               autocomplete: 'email',
             },
             {
               key: 'phone',
-              label: 'Phone number',
+              label: 'Phone number (optional)',
               placeholder: 'e.g. 012 345 6789',
-              keyboard: 'phone-pad',
+              keyboard: 'default',
               autocomplete: 'tel',
             },
           ] as const
@@ -138,7 +138,7 @@ export function CheckoutScreen({
           <View key={field.key} style={{ marginTop: 15 }}>
             <Label style={s.fieldLabel}>
               {field.label}
-              <Label style={{ color: c.blue }}> *</Label>
+              {field.key === 'name' && <Label style={{ color: c.blue }}> *</Label>}
             </Label>
             <TextInput
               ref={(input) => {
@@ -161,7 +161,7 @@ export function CheckoutScreen({
               placeholder={field.placeholder}
               placeholderTextColor={c.muted}
               value={customer[field.key]}
-              maxLength={field.key === 'name' ? 100 : field.key === 'email' ? 150 : 25}
+              maxLength={field.key === 'name' ? 100 : undefined}
               onChangeText={(value) => {
                 setCustomer({ ...customer, [field.key]: value });
                 setErrors({ ...errors, [field.key]: undefined });

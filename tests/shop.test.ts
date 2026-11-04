@@ -109,22 +109,32 @@ test('removal affects only the matching line', () => {
 test('totals multiply quantities in integer sen', () => {
   assert.equal(cartTotal([{ ...tee, quantity: 3 }], catalog), 14700);
 });
-test('checkout requires all three valid contact fields', () => {
+test('checkout requires a name but accepts arbitrary contact details', () => {
   assert.deepEqual(Object.keys(validateCustomer({ name: '', email: 'oops', phone: '123' })), [
     'name',
-    'email',
-    'phone',
   ]);
   assert.deepEqual(validateCustomer(customer), {});
 });
-test('phone validation permits common separators but rejects letters', () => {
-  assert.equal(validateCustomer({ ...customer, phone: '+60 (12) 345-6789' }).phone, undefined);
-  assert.ok(validateCustomer({ ...customer, phone: '012abc3456789' }).phone);
+test('orders accept empty or arbitrary email and phone values', () => {
+  for (const contact of [
+    { email: '', phone: '' },
+    { email: 'oops', phone: 'anything' },
+  ]) {
+    const order = createOrder(
+      [tee],
+      catalog,
+      { ...customer, ...contact },
+      'id',
+      new Date().toISOString(),
+    );
+    assert.equal(order.customer.email, contact.email);
+    assert.equal(order.customer.phone, contact.phone);
+  }
 });
 test('empty bags and invalid customers cannot create an order', () => {
   assert.throws(() => createOrder([], catalog, customer, 'id', new Date().toISOString()));
   assert.throws(() =>
-    createOrder([tee], catalog, { ...customer, email: '' }, 'id', new Date().toISOString()),
+    createOrder([tee], catalog, { ...customer, name: '' }, 'id', new Date().toISOString()),
   );
 });
 test('orders capture independent item, price, and customer snapshots', () => {
