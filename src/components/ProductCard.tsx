@@ -59,7 +59,7 @@ const s = StyleSheet.create({
     position: 'absolute',
     top: 10,
     left: 10,
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
     paddingVertical: 5,
     paddingHorizontal: 9,
     borderRadius: radius.pill,

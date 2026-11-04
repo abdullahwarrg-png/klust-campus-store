@@ -11,7 +11,7 @@ export function OrdersScreen() {
   const { orders } = useShop();
   const navigation = useNavigation<AppNavigation>();
   return (
-    <View style={{ flex: 1, backgroundColor: c.white }}>
+    <View style={{ flex: 1, backgroundColor: c.surface }}>
       <PageHeader title="Your orders" subtitle="Demo orders saved on this device." />
       {!orders.length ? (
         <EmptyState

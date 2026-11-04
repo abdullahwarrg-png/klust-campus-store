@@ -1,6 +1,6 @@
 import { ActivityIndicator, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ClipboardList, ShoppingBag, Store } from 'lucide-react-native';
@@ -18,12 +18,12 @@ import type { RootStackParams, TabParams } from './types';
 const Tab = createBottomTabNavigator<TabParams>();
 const Stack = createNativeStackNavigator<RootStackParams>();
 const theme = {
-  ...DefaultTheme,
+  ...DarkTheme,
   colors: {
-    ...DefaultTheme.colors,
+    ...DarkTheme.colors,
     primary: c.blue,
-    background: c.white,
-    card: c.white,
+    background: c.surface,
+    card: c.surface,
     text: c.ink,
     border: c.line,
   },
@@ -37,7 +37,7 @@ function MainTabs() {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: c.blue,
-        tabBarInactiveTintColor: '#8C97AA',
+        tabBarInactiveTintColor: c.muted,
         tabBarStyle: {
           height: 70 + insets.bottom,
           paddingTop: 7,
@@ -48,7 +48,7 @@ function MainTabs() {
         },
         tabBarLabelStyle: { fontFamily: fonts.semibold, fontSize: 11, marginTop: 4 },
         tabBarBadgeStyle: {
-          backgroundColor: c.blue,
+          backgroundColor: c.action,
           color: c.white,
           fontFamily: fonts.bold,
           fontSize: 9,
@@ -113,10 +113,10 @@ export function AppNavigator() {
   return (
     <View style={{ flex: 1 }}>
       {!!storageError && (
-        <View style={{ backgroundColor: '#FFF2E3', padding: 12 }}>
+        <View style={{ backgroundColor: c.warningBackground, padding: 12 }}>
           <Label
             accessibilityRole="alert"
-            style={{ color: '#84461A', fontSize: 11, lineHeight: 17 }}
+            style={{ color: c.warningText, fontSize: 11, lineHeight: 17 }}
           >
             {storageError}
           </Label>
@@ -126,7 +126,7 @@ export function AppNavigator() {
         <Stack.Navigator
           screenOptions={{
             headerShown: false,
-            contentStyle: { backgroundColor: c.white },
+            contentStyle: { backgroundColor: c.surface },
             animation: 'slide_from_right',
           }}
         >

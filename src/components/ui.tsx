@@ -247,7 +247,7 @@ export const styles = StyleSheet.create({
   button: {
     minHeight: 54,
     borderRadius: 14,
-    backgroundColor: c.blue,
+    backgroundColor: c.action,
     paddingHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -263,7 +263,7 @@ export const styles = StyleSheet.create({
     borderRadius: 22,
   },
   header: {
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
     paddingHorizontal: 22,
     paddingBottom: 14,
     borderBottomWidth: 1,
@@ -277,7 +277,7 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: c.line,
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
   },
   quantityButton: { minWidth: 40, height: '100%', justifyContent: 'center', alignItems: 'center' },
   pickup: {
@@ -292,7 +292,7 @@ export const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: 10,
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
     alignItems: 'center',
     justifyContent: 'center',
   },

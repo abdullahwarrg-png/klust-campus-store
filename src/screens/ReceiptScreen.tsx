@@ -26,7 +26,7 @@ export function ReceiptScreen({
       />
     );
   return (
-    <View style={{ flex: 1, backgroundColor: c.white }}>
+    <View style={{ flex: 1, backgroundColor: c.surface }}>
       <PageHeader title="Your order receipt" back={() => goTo('Orders')} />
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -120,7 +120,7 @@ const s = StyleSheet.create({
     width: 79,
     height: 79,
     borderRadius: 29,
-    backgroundColor: c.blue,
+    backgroundColor: c.action,
     alignItems: 'center',
     justifyContent: 'center',
     transform: [{ rotate: '-7deg' }],

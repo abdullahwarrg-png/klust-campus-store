@@ -60,7 +60,7 @@ export function ProductScreen({
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.white }}>
+    <View style={{ flex: 1, backgroundColor: c.surface }}>
       <PageHeader
         title="The campus collection"
         back={() => navigation.goBack()}
@@ -101,7 +101,7 @@ export function ProductScreen({
             </View>
             {product.badge && (
               <View style={s.badge}>
-                <Label style={{ fontSize: 11, fontFamily: fonts.semibold, color: c.navy }}>
+                <Label style={{ fontSize: 11, fontFamily: fonts.semibold, color: c.ink }}>
                   {product.badge}
                 </Label>
               </View>
@@ -171,7 +171,7 @@ export function ProductScreen({
               >
                 <View style={[s.swatchInner, { backgroundColor: option.hex }]}>
                   {index === colourIndex && (
-                    <Check size={15} color={option.name === 'Cloud' ? c.navy : c.white} />
+                    <Check size={15} color={option.name === 'Cloud' ? '#102952' : c.white} />
                   )}
                 </View>
               </Pressable>
@@ -317,7 +317,7 @@ const s = StyleSheet.create({
   },
   tagLabel: { fontFamily: fonts.bold, fontSize: 9, letterSpacing: 1.4, color: c.navy },
   badge: {
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
     borderRadius: radius.pill,
     paddingHorizontal: 11,
     paddingVertical: 6,
@@ -374,7 +374,7 @@ const s = StyleSheet.create({
   },
   capacity: {
     alignSelf: 'flex-start',
-    backgroundColor: '#F3F5F8',
+    backgroundColor: c.background,
     borderRadius: 9,
     padding: 13,
     marginTop: 10,
@@ -382,14 +382,14 @@ const s = StyleSheet.create({
   quantityRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   error: { fontSize: 12, color: c.red, lineHeight: 18 },
   detail: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 9 },
-  detailDot: { width: 5, height: 5, borderRadius: 3, backgroundColor: c.blue },
+  detailDot: { width: 5, height: 5, borderRadius: 3, backgroundColor: c.action },
   pickupLine: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 18 },
   actionBar: {
     paddingHorizontal: 22,
     paddingTop: 14,
     borderTopWidth: 1,
     borderTopColor: c.line,
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
   },
   feedback: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 8 },
   bagBadge: {
@@ -398,7 +398,7 @@ const s = StyleSheet.create({
     top: 0,
     minWidth: 17,
     height: 17,
-    backgroundColor: c.blue,
+    backgroundColor: c.action,
     borderRadius: 9,
     alignItems: 'center',
     justifyContent: 'center',

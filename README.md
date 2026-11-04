@@ -14,6 +14,7 @@ A campus merchandise shopping demo built with **Expo, React Native, and TypeScri
 
 ## What you can try
 
+- Dark theme with blue accents, phone-width layouts, and inputs sized to avoid automatic mobile focus zoom.
 - Search, category filtering, and featured or price sorting across **eight T-shirts and four mugs**.
 - Select **More · Coming soon** to preview upcoming campus favourites.
 - Choose matching product colour images, T-shirt sizes S–XXL, and quantities.
@@ -133,3 +134,7 @@ Credits:
 ## Next steps
 
 Real fulfillment would require a backend, server-validated inventory and prices, secure customer records, and campus pickup operations. Accounts, payments, and cross-device history are outside this demo. Native keyboard, hardware Back, screen-reader, and physical-device checks remain future validation work.
+
+### Mobile browser verification
+
+Run `npx playwright install chromium webkit`, then `npm run verify:mobile` against the local export (or append the live demo URL). It checks Chromium and WebKit at 320, 390, 430, and 600 px, including full-width layout, normal viewport scale, and checkout input focus. Browser emulation does not replace physical-device testing.

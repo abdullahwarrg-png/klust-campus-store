@@ -1,4 +1,4 @@
-import { ActivityIndicator, Platform, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Platform, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
@@ -7,6 +7,7 @@ import { AppNavigator } from './src/navigation/AppNavigator';
 import { colours } from './src/theme';
 
 export default function App() {
+  const { width } = useWindowDimensions();
   const [fontsLoaded, fontError] = useFonts({
     DMSans_400Regular: require('@expo-google-fonts/dm-sans/400Regular/DMSans_400Regular.ttf'),
     DMSans_500Medium: require('@expo-google-fonts/dm-sans/500Medium/DMSans_500Medium.ttf'),
@@ -15,9 +16,12 @@ export default function App() {
   });
   return (
     <SafeAreaProvider>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <View style={s.canvas}>
-        <View style={s.app}>
+        <View
+          testID="store-app"
+          style={[s.app, Platform.OS === 'web' && width >= 768 && s.desktop]}
+        >
           {!fontsLoaded && !fontError ? (
             <View style={s.loading}>
               <ActivityIndicator color={colours.blue} />
@@ -34,13 +38,14 @@ export default function App() {
 }
 
 const s = StyleSheet.create({
-  canvas: { flex: 1, backgroundColor: '#EAF0F8' },
+  canvas: { flex: 1, minWidth: 0, backgroundColor: colours.canvas },
   app: {
     flex: 1,
     width: '100%',
     alignSelf: 'center',
-    backgroundColor: colours.white,
-    ...(Platform.OS === 'web' ? { maxWidth: 480, boxShadow: '0 0 60px #10295215' } : {}),
+    backgroundColor: colours.surface,
+    minWidth: 0,
   },
+  desktop: { maxWidth: 560, boxShadow: '0 0 60px #00000040' },
   loading: { flex: 1, alignItems: 'center', justifyContent: 'center' },
 });

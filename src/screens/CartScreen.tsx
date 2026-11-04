@@ -13,7 +13,7 @@ export function CartScreen() {
   const navigation = useNavigation<AppNavigation>();
   const shop = () => navigation.navigate('Main', { screen: 'Shop' });
   return (
-    <View style={{ flex: 1, backgroundColor: c.white }}>
+    <View style={{ flex: 1, backgroundColor: c.surface }}>
       <PageHeader
         title="Your bag"
         subtitle={

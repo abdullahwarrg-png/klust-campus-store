@@ -9,6 +9,10 @@
 - Android and iOS Hermes exports and the web production export.
 - Three actual app screenshots: Shop, Product Details, and Checkout. All use the temporary product illustrations.
 
+## Dark theme and mobile sizing
+
+On 4 November 2026, eight additional mobile checks passed in Chromium and WebKit at 320, 390, 430, and 600 px. The app filled the viewport at 1× scale without horizontal overflow, including after focusing search and checkout inputs. All fields use 16 px text to avoid iOS focus zoom. Dark surfaces, readable foreground colours, and a light native status bar are applied across the app. These are browser emulation results; physical phones were not tested. Reproduce with `npm run verify:mobile` after installing both Playwright browsers.
+
 ## Added coverage
 
 - More shows Coming soon, expose no product purchase controls, and return to all available items.

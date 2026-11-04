@@ -44,7 +44,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "verify:web": "node scripts/verify-web.cjs",
-    "export:web": "expo export --platform web"
+    "export:web": "expo export --platform web",
+    "verify:mobile": "node scripts/verify-mobile.cjs"
   },
   "private": true,
   "engines": {

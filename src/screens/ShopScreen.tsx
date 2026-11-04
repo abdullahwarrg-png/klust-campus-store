@@ -53,7 +53,7 @@ export function ShopScreen() {
   const upcoming = selectedCategory.availability === 'upcoming';
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.white }}>
+    <View style={{ flex: 1, backgroundColor: c.surface }}>
       <View style={[s.top, { paddingTop: Math.max(insets.top, 16) }]}>
         <Brand />
         <IconButton
@@ -87,7 +87,7 @@ export function ShopScreen() {
               <TextInput
                 accessibilityLabel="Search products"
                 placeholder="Search products"
-                placeholderTextColor="#8A94A5"
+                placeholderTextColor={c.muted}
                 value={search}
                 onChangeText={setSearch}
                 style={s.input}
@@ -150,7 +150,7 @@ export function ShopScreen() {
                       style={{
                         fontSize: 13,
                         fontFamily: fonts.semibold,
-                        color: category === item.id ? c.white : '#4E5B73',
+                        color: category === item.id ? c.white : c.muted,
                       }}
                     >
                       {item.label}
@@ -279,7 +279,7 @@ const s = StyleSheet.create({
     paddingHorizontal: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: c.blue,
+    backgroundColor: c.action,
     borderWidth: 2,
     borderColor: c.white,
   },
@@ -300,7 +300,7 @@ const s = StyleSheet.create({
     height: '100%',
     minWidth: 0,
     fontFamily: fonts.regular,
-    fontSize: 14,
+    fontSize: 16,
     color: c.ink,
   },
   perks: {
@@ -313,7 +313,7 @@ const s = StyleSheet.create({
     borderBottomColor: c.line,
   },
   perk: { flexDirection: 'row', alignItems: 'center', gap: 5 },
-  perkLabel: { fontSize: 11, fontFamily: fonts.medium, color: '#46546D' },
+  perkLabel: { fontSize: 11, fontFamily: fonts.medium, color: c.muted },
   collectionHeading: {
     marginTop: 26,
     marginBottom: 16,
@@ -333,7 +333,7 @@ const s = StyleSheet.create({
   categories: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, flex: 1, minWidth: '100%' },
   chip: {
     borderRadius: radius.pill,
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
     borderWidth: 1,
     borderColor: c.line,
     paddingHorizontal: 13,
@@ -354,7 +354,7 @@ const s = StyleSheet.create({
     padding: 5,
     borderRadius: radius.md,
     marginBottom: 18,
-    backgroundColor: c.white,
+    backgroundColor: c.surface,
   },
   footer: {
     borderTopWidth: 1,

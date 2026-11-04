@@ -65,7 +65,7 @@ export function CheckoutScreen({
 
   if (!cart.length && !saving && !completed)
     return (
-      <View style={{ flex: 1, backgroundColor: c.white }}>
+      <View style={{ flex: 1, backgroundColor: c.surface }}>
         <PageHeader title="Checkout" back={() => navigation.goBack()} />
         <EmptyState
           icon={ShoppingBag}
@@ -79,7 +79,7 @@ export function CheckoutScreen({
 
   return (
     <KeyboardAvoidingView
-      style={{ flex: 1, backgroundColor: c.white }}
+      style={{ flex: 1, backgroundColor: c.surface }}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <PageHeader
@@ -159,7 +159,7 @@ export function CheckoutScreen({
                     : Keyboard.dismiss()
               }
               placeholder={field.placeholder}
-              placeholderTextColor="#9AA4B3"
+              placeholderTextColor={c.muted}
               value={customer[field.key]}
               maxLength={field.key === 'name' ? 100 : field.key === 'email' ? 150 : 25}
               onChangeText={(value) => {
@@ -169,7 +169,7 @@ export function CheckoutScreen({
               }}
               style={[
                 s.input,
-                !!errors[field.key] && { borderColor: c.red, backgroundColor: '#FFF9F9' },
+                !!errors[field.key] && { borderColor: c.red, backgroundColor: c.errorBackground },
               ]}
             />
             {!!errors[field.key] && (
@@ -266,7 +266,7 @@ const s = StyleSheet.create({
   progressDone: {
     width: 21,
     height: 21,
-    backgroundColor: c.green,
+    backgroundColor: c.paleGreen,
     borderRadius: 11,
     justifyContent: 'center',
     alignItems: 'center',
@@ -274,7 +274,7 @@ const s = StyleSheet.create({
   progressActive: {
     width: 21,
     height: 21,
-    backgroundColor: c.blue,
+    backgroundColor: c.action,
     borderRadius: 11,
     justifyContent: 'center',
     alignItems: 'center',
@@ -289,12 +289,11 @@ const s = StyleSheet.create({
     borderRadius: 11,
     borderWidth: 1,
     borderColor: c.line,
-    backgroundColor: '#FBFCFE',
+    backgroundColor: c.background,
     paddingHorizontal: 14,
     fontFamily: fonts.regular,
-    fontSize: 12,
+    fontSize: 16,
     color: c.ink,
-    outlineWidth: 0,
   },
   error: { color: c.red, fontSize: 12.5, lineHeight: 17, marginTop: 6 },
   divider: { height: 1, backgroundColor: c.line, marginVertical: 23 },
