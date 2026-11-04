@@ -217,7 +217,7 @@ export function ShopScreen() {
           <View style={{ alignItems: 'center', paddingVertical: 50 }}>
             <Search size={30} color={c.muted} />
             <Label style={{ fontFamily: fonts.bold, fontSize: 19, marginTop: 16 }}>
-              {upcoming ? `${selectedCategory.label} are coming soon` : 'No campus finds just yet'}
+              {upcoming ? 'More coming soon' : 'No campus finds just yet'}
             </Label>
             <Label muted style={{ textAlign: 'center', lineHeight: 22, marginTop: 10 }}>
               {upcoming

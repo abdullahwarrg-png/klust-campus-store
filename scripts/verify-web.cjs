@@ -38,14 +38,14 @@ async function main() {
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: shots + '/shop.png' });
   await waitText('Block 9 Foyer');
-  for (const category of ['Pens', 'Caps']) {
+  for (const category of ['More']) {
     await button(`Filter ${category} — Coming soon`).click();
-    await waitText(`${category} are coming soon`);
+    await waitText('More coming soon');
     assert.equal(await page.getByRole('button', { name: /^View The / }).count(), 0);
     await button('Browse available items').click();
     await waitText('12 items');
   }
-  checks.push('Pens and Caps coming soon, no purchases, and available-catalog recovery');
+  checks.push('More coming soon, no purchases, and available-catalog recovery');
   await button('Filter Mugs').click();
   await waitText('4 items');
   await button('Sort products').click();

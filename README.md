@@ -15,7 +15,7 @@ A campus merchandise shopping demo built with **Expo, React Native, and TypeScri
 ## What you can try
 
 - Search, category filtering, and featured or price sorting across **eight T-shirts and four mugs**.
-- Select **Pens** or **Caps** to see their **Coming soon** previews.
+- Select **More · Coming soon** to preview upcoming campus favourites.
 - Choose matching product colour images, T-shirt sizes S–XXL, and quantities.
 - Build a persistent bag with separate colour/size variants and a ten-unit limit per variant.
 - Complete validated guest checkout for complimentary pickup at **Block 9 Foyer**.
@@ -102,7 +102,7 @@ flowchart LR
 
 Shop, Bag, and Orders use bottom tabs. Product Details, Checkout, and Receipt use a native stack. Routes pass identifiers; `useShop()` owns shared data. Prices use integer sen and are formatted as MYR only for display.
 
-Cart lines are identified by product, colour, and size. Writes to AsyncStorage run sequentially, and checkout saves the completed order before clearing the bag. Historical receipts retain item names and prices independently of the current catalog. Upcoming category metadata is separate from purchasable product types, so Pens and Caps cannot enter checkout.
+Cart lines are identified by product, colour, and size. Writes to AsyncStorage run sequentially, and checkout saves the completed order before clearing the bag. Historical receipts retain item names and prices independently of the current catalog. Upcoming category metadata is separate from purchasable product types, so upcoming items cannot enter checkout.
 
 ## Deployment
 

@@ -11,7 +11,7 @@
 
 ## Added coverage
 
-- Pens and Caps each show Coming soon, expose no product purchase controls, and return to all available items.
+- More shows Coming soon, expose no product purchase controls, and return to all available items.
 - Block 9 Foyer is visible on Shop, Bag, Checkout, and Receipt.
 - Desktop layout and keyboard focus are checked in addition to the mobile viewports.
 
