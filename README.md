@@ -1,4 +1,5 @@
 # KLUST Campus Store
+
 # (CSC 3563 MOBILE PROGRAMMING ASSIGNMENT)
 
 A campus merchandise shopping app built with **Expo, React Native, and TypeScript**. Discover twelve T-shirts and mugs, choose your colours and sizes, and complete a simulated pickup order.
@@ -14,7 +15,6 @@ A campus merchandise shopping app built with **Expo, React Native, and TypeScrip
 |                                                  Shop                                                   |                                              Product details                                              |                                                 Checkout                                                  |
 | :-----------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
 | <img src="docs/screenshots/shop.png" width="240" alt="Shop with KLUST collection and category filters"> | <img src="docs/screenshots/product-details.png" width="240" alt="Heritage Tee colour and size selection"> | <img src="docs/screenshots/checkout.png" width="240" alt="Guest checkout with fictional contact details"> |
-
 
 ## Architecture
 
@@ -96,7 +96,6 @@ npm run verify:web -- http://localhost:8082
 ```
 
 The walkthrough refreshes three screenshots and `docs/verification.json`. It tests category previews, filtering, variants, cart totals, reload persistence, validation, storage failure recovery, duplicate submission, receipts, pickup information, narrow layouts, desktop layout, keyboard focus, and runtime errors. The current record contains **19 passing logic tests and 13 passing browser scenario groups**. See [validation details and limits](docs/VALIDATION.md).
-
 
 ## Deployment
 
