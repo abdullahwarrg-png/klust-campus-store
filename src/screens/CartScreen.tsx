@@ -17,9 +17,7 @@ export function CartScreen() {
       <PageHeader
         title="Your bag"
         subtitle={
-          itemCount
-            ? `${itemCount} ${itemCount === 1 ? 'campus favourite' : 'campus favourites'}, ready for you.`
-            : 'A little room for your next favourite.'
+          itemCount ? `${itemCount} ${itemCount === 1 ? 'item' : 'items'} in your bag` : undefined
         }
         right={
           <View style={s.count}>
@@ -32,9 +30,9 @@ export function CartScreen() {
       {!cart.length ? (
         <EmptyState
           icon={ShoppingBag}
-          title="Your bag is taking a break"
-          description="Find a tee for your next class or a mug for your morning ritual. Your campus favourites are waiting."
-          action="Explore the collection"
+          title="Your bag is empty"
+          description="Add products to your bag to continue to checkout."
+          action="Browse products"
           onAction={shop}
         />
       ) : (
@@ -54,7 +52,7 @@ export function CartScreen() {
             </Pressable>
             <PickupCard compact />
             <View style={s.summary}>
-              <Eyebrow>THE LITTLE DETAILS</Eyebrow>
+              <Eyebrow>ORDER SUMMARY</Eyebrow>
               <View style={s.summaryLine}>
                 <Label muted>Subtotal</Label>
                 <Label style={{ fontFamily: fonts.semibold }}>{money(total)}</Label>

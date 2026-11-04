@@ -11,8 +11,7 @@ export const products: Product[] = [
     price: 4900,
     badge: 'Bestseller',
     sizes,
-    description:
-      'A little campus pride, wherever the day takes you. Our signature crest tee pairs an easy, relaxed fit with soft cotton you will reach for on repeat.',
+    description: 'A relaxed-fit cotton T-shirt with the KLUST crest.',
     details: [
       '100% cotton · 200 gsm',
       'Relaxed unisex fit',
@@ -40,13 +39,12 @@ export const products: Product[] = [
   {
     id: 'campus-mug',
     name: 'The Campus Mug',
-    collection: 'LITTLE CAMPUS RITUALS',
+    collection: 'MUG COLLECTION',
     category: 'mugs',
     price: 2900,
-    badge: 'Campus favourite',
+    badge: 'Crest design',
     capacity: '350 ml',
-    description:
-      'For early lectures, late study sessions, and everything in between. A comfortable ceramic mug with our university crest and a generous everyday pour.',
+    description: 'A 350 ml glazed ceramic mug with the KLUST crest and a curved handle.',
     details: [
       'Glazed ceramic · 350 ml',
       'Comfortable curved handle',
@@ -70,8 +68,7 @@ export const products: Product[] = [
     price: 5500,
     sizes,
     badge: 'New arrival',
-    description:
-      'Big university energy in a laid-back silhouette. Varsity lettering and our crest make this a new favourite for class days and weekends.',
+    description: 'A relaxed-fit cotton T-shirt with varsity lettering and the KLUST crest.',
     details: [
       '100% cotton · 220 gsm',
       'Relaxed unisex fit',
@@ -98,8 +95,7 @@ export const products: Product[] = [
     category: 'tshirts',
     price: 4500,
     sizes,
-    description:
-      'Clean, simple, and unmistakably KLUST. A smaller crest placement keeps things understated, with soft cotton doing the rest.',
+    description: 'A regular-fit cotton T-shirt with a small chest crest print.',
     details: [
       '100% cotton · 180 gsm',
       'Regular unisex fit',
@@ -118,12 +114,11 @@ export const products: Product[] = [
   {
     id: 'crest-mug',
     name: 'The Crest Mug',
-    collection: 'LITTLE CAMPUS RITUALS',
+    collection: 'MUG COLLECTION',
     category: 'mugs',
     price: 3200,
     capacity: '350 ml',
-    description:
-      'A navy finish, a familiar crest, and your favourite drink. An easy addition to your desk or a thoughtful gift for a fellow student.',
+    description: 'A 350 ml glazed ceramic mug with the KLUST crest and a contrast white interior.',
     details: [
       'Glazed ceramic · 350 ml',
       'Contrast white interior',
@@ -146,8 +141,7 @@ export const products: Product[] = [
     category: 'tshirts',
     price: 4900,
     sizes,
-    description:
-      'An off-duty essential with a campus twist. The easy shape and university print go just as well with jeans as they do with your favourite joggers.',
+    description: 'A relaxed-fit cotton T-shirt with the KLUST crest and campus lettering.',
     details: [
       '100% cotton · 200 gsm',
       'Relaxed unisex fit',
@@ -174,8 +168,7 @@ export const products: Product[] = [
     category: 'tshirts',
     price: 5900,
     sizes,
-    description:
-      'Bring a little team spirit to your everyday rotation. A bold crest and sporty stripes give this cotton tee its distinctive campus character.',
+    description: 'A relaxed-fit cotton T-shirt with a KLUST graphic and sporty stripes.',
     details: [
       '100% cotton · 220 gsm',
       'Relaxed unisex fit',
@@ -198,12 +191,11 @@ export const products: Product[] = [
   {
     id: 'daily-mug',
     name: 'The Daily Mug',
-    collection: 'LITTLE CAMPUS RITUALS',
+    collection: 'MUG COLLECTION',
     category: 'mugs',
     price: 2500,
     capacity: '300 ml',
-    description:
-      'Small rituals make busy days better. This compact ceramic mug adds a familiar KLUST touch to your morning coffee or evening tea.',
+    description: 'A compact 300 ml glazed ceramic mug with the KLUST crest.',
     details: [
       'Glazed ceramic · 300 ml',
       'Compact everyday shape',
@@ -226,8 +218,7 @@ export const products: Product[] = [
     category: 'tshirts',
     price: 3900,
     sizes,
-    description:
-      'Your everyday staple, made a little more personal. A classic cut with the university crest for an easy introduction to the campus collection.',
+    description: 'A regular-fit cotton T-shirt with the KLUST crest.',
     details: [
       '100% cotton · 180 gsm',
       'Regular unisex fit',
@@ -254,8 +245,7 @@ export const products: Product[] = [
     category: 'tshirts',
     price: 5500,
     sizes,
-    description:
-      'Keep a piece of campus with you. Bold alumni lettering, the university crest, and a comfortable fit made for your next chapter.',
+    description: 'A relaxed-fit cotton T-shirt with alumni lettering and the KLUST crest.',
     details: [
       '100% cotton · 220 gsm',
       'Relaxed unisex fit',
@@ -274,12 +264,11 @@ export const products: Product[] = [
   {
     id: 'duo-mug',
     name: 'The Two Tone Mug',
-    collection: 'LITTLE CAMPUS RITUALS',
+    collection: 'MUG COLLECTION',
     category: 'mugs',
     price: 3500,
     capacity: '400 ml',
-    description:
-      'A bigger cup for longer conversations. A two-tone finish frames the KLUST crest, with plenty of room for your favourite brew.',
+    description: 'A 400 ml glazed ceramic mug with a contrast handle and rim.',
     details: [
       'Glazed ceramic · 400 ml',
       'Contrast colour handle and rim',
@@ -298,8 +287,7 @@ export const products: Product[] = [
     category: 'tshirts',
     price: 5200,
     sizes,
-    description:
-      'For curious minds and full calendars. A clean crest graphic and comfortable cotton fit make a dependable companion for the campus day.',
+    description: 'A relaxed-fit cotton T-shirt with the KLUST crest and knowledge lettering.',
     details: [
       '100% cotton · 200 gsm',
       'Relaxed unisex fit',

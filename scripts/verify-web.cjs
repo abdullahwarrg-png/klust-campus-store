@@ -34,7 +34,7 @@ async function main() {
     });
   const saved = () => page.evaluate((key) => JSON.parse(localStorage.getItem(key)), key);
   await page.goto(url);
-  await waitText('Campus essentials');
+  await waitText('Products');
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: shots + '/shop.png' });
   await waitText('Block 9 Foyer');
@@ -55,7 +55,7 @@ async function main() {
   assert.match(cards[3], /The Two Tone Mug/);
   checks.push('Mug category and ascending price order');
   await page.getByRole('textbox', { name: 'Search products' }).fill('not-a-product');
-  await waitText('No campus finds just yet');
+  await waitText('No matching products');
   await button('Reset search and filters').click();
   await waitText('12 items');
   checks.push('Combined search filters and no-results recovery');
@@ -95,7 +95,7 @@ async function main() {
   await button('View cart').click();
   await waitText('RM 127.00');
   await page.reload();
-  await waitText('Campus essentials');
+  await waitText('Products');
   await page.getByRole('tab', { name: 'Cart tab' }).click();
   await waitText('RM 127.00');
   checks.push('Mug-specific controls and persisted bag after reload');
@@ -134,7 +134,7 @@ async function main() {
   });
   checks.push('Failed order save preserves the bag and allows retry');
   await button('Place demo order').click({ clickCount: 2, delay: 10 });
-  await waitText('Good choice, Aina.');
+  await waitText('Demo order saved');
   await waitText('Pickup · Block 9 Foyer');
   state = await saved();
   assert.equal(state.orders.length, 1);
@@ -144,18 +144,18 @@ async function main() {
   checks.push('Repeated submission creates one durable order and clears the bag');
   await button('View my orders').click();
   await button('View order ' + orderId).click();
-  await waitText('Good choice, Aina.');
+  await waitText('Demo order saved');
   await button('View my orders').click();
   await page.reload();
-  await waitText('Campus essentials');
+  await waitText('Products');
   await page.getByRole('tab', { name: 'Orders tab' }).click();
   await button('View order ' + orderId).waitFor();
   checks.push('Receipt, order history links, and history persistence after reload');
   await page.getByRole('tab', { name: 'Cart tab' }).click();
-  await waitText('Your bag is taking a break');
-  await button('Explore the collection').click();
+  await waitText('Your bag is empty');
+  await button('Browse products').click();
   await page.setViewportSize({ width: 320, height: 760 });
-  await waitText('Campus essentials');
+  await waitText('Products');
   await page.screenshot({ path: shots + '/small-phone-check.png' });
   await fs.unlink(shots + '/small-phone-check.png');
   const overflow = await page.evaluate(() => ({
@@ -175,7 +175,7 @@ async function main() {
   checks.push('No browser runtime errors');
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.reload();
-  await waitText('Campus essentials');
+  await waitText('Products');
   await page.keyboard.press('Tab');
   assert.ok(await page.evaluate(() => document.activeElement !== document.body));
   assert.ok(await page.getByRole('textbox', { name: 'Search products' }).isVisible());

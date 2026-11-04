@@ -21,18 +21,18 @@ export function CollectionHero({ onExplore }: { onExplore: () => void }) {
         />
       </View>
       <View style={s.copy}>
-        <Label style={s.title}>Campus pride.{`\n`}Every day.</Label>
-        <Label style={s.description}>Your next favourite tee. Your everyday mug.</Label>
+        <Label style={s.title}>KLUST Campus Store</Label>
+        <Label style={s.description}>T-shirts and mugs with KLUST designs.</Label>
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="Shop the collection"
+          accessibilityLabel="Browse products"
           onPress={onExplore}
           style={({ pressed }) => [s.button, pressed && { opacity: 0.8 }]}
         >
-          <Label style={s.buttonLabel}>Shop the collection</Label>
+          <Label style={s.buttonLabel}>Browse products</Label>
           <ArrowRight size={17} color={c.navy} strokeWidth={1.8} />
         </Pressable>
-        <Label style={s.note}>Explore our T-shirts & mugs</Label>
+        <Label style={s.note}>Guest checkout · Campus pickup</Label>
       </View>
     </View>
   );

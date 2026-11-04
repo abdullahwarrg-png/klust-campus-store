@@ -12,13 +12,13 @@ export function OrdersScreen() {
   const navigation = useNavigation<AppNavigation>();
   return (
     <View style={{ flex: 1, backgroundColor: c.white }}>
-      <PageHeader title="Your orders" subtitle="A little history of your campus favourites." />
+      <PageHeader title="Your orders" subtitle="Demo orders saved on this device." />
       {!orders.length ? (
         <EmptyState
           icon={ClipboardList}
-          title="Your story starts here"
-          description="Once you place a demo order, you can find its details and pickup summary right here."
-          action="Find your first favourite"
+          title="No orders yet"
+          description="Your demo orders and receipts will appear here after checkout."
+          action="Browse products"
           onAction={() => navigation.navigate('Main', { screen: 'Shop' })}
         />
       ) : (

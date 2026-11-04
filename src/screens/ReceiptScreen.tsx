@@ -42,12 +42,10 @@ export function ReceiptScreen({
           <View style={s.sparkleRight}>
             <Sparkles size={14} color="#80A4E1" />
           </View>
-          <Eyebrow style={{ color: c.blue, marginTop: 22 }}>
-            A LITTLE CAMPUS IS COMING YOUR WAY
-          </Eyebrow>
-          <Label style={s.title}>Good choice, {order.customer.name.split(' ')[0]}.</Label>
+          <Eyebrow style={{ color: c.blue, marginTop: 22 }}>ORDER CONFIRMATION</Eyebrow>
+          <Label style={s.title}>Demo order saved</Label>
           <Label muted style={{ textAlign: 'center', fontSize: 12, lineHeight: 20, marginTop: 9 }}>
-            Your demo order is saved.{`\n`}Here’s a little recap of your campus favourites.
+            Your receipt is saved on this device.
           </Label>
         </View>
         <View style={s.receipt}>
@@ -104,7 +102,7 @@ export function ReceiptScreen({
           This is a demonstration receipt. No payment was taken, no email was sent, and no real
           collection has been reserved.
         </Label>
-        <Button title="Keep exploring" onPress={() => goTo('Shop')} />
+        <Button title="Browse products" onPress={() => goTo('Shop')} />
         <Button
           title="View my orders"
           onPress={() => goTo('Orders')}

@@ -233,7 +233,7 @@ export function Brand() {
           KLUST<Label style={{ fontFamily: fonts.regular, fontSize: 18 }}> / store</Label>
         </Label>
         <Label muted style={{ fontSize: 9, letterSpacing: 1.6, marginTop: 2 }}>
-          A LITTLE CAMPUS. EVERYWHERE.
+          CAMPUS MERCHANDISE
         </Label>
       </View>
     </View>

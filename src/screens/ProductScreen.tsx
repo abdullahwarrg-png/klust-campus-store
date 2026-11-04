@@ -37,7 +37,7 @@ export function ProductScreen({
       <EmptyState
         icon={Package}
         title="Product not found"
-        description="Return to the collection to find your next campus favourite."
+        description="This product is unavailable. Browse the catalog to choose another item."
         action="Back to Shop"
         onAction={() => navigation.popTo('Main', { screen: 'Shop' })}
       />
@@ -142,7 +142,7 @@ export function ProductScreen({
           <View style={s.quality}>
             <CheckCircle2 size={14} color={c.green} />
             <Label style={{ fontSize: 12, color: c.green, fontFamily: fonts.medium }}>
-              Campus pride, thoughtfully made
+              KLUST merchandise
             </Label>
           </View>
           <Label muted style={{ fontSize: 14, lineHeight: 22, marginTop: 14 }}>
@@ -242,7 +242,7 @@ export function ProductScreen({
             />
           </View>
           <View style={s.divider} />
-          <Label style={[s.optionLabel, { marginBottom: 12 }]}>The details</Label>
+          <Label style={[s.optionLabel, { marginBottom: 12 }]}>Product details</Label>
           {product.details.map((detail) => (
             <View key={detail} style={s.detail}>
               <View style={s.detailDot} />

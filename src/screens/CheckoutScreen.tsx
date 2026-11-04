@@ -70,7 +70,7 @@ export function CheckoutScreen({
         <EmptyState
           icon={ShoppingBag}
           title="Your bag is empty"
-          description="Add something from the collection before placing a pickup order."
+          description="Add products to your bag to continue to checkout."
           action="Back to Shop"
           onAction={() => navigation.popTo('Main', { screen: 'Shop' })}
         />
@@ -84,7 +84,7 @@ export function CheckoutScreen({
     >
       <PageHeader
         title="Checkout"
-        subtitle="One step closer to your campus favourites."
+        subtitle="Review your items and enter your contact details."
         back={saving ? undefined : () => navigation.goBack()}
       />
       <ScrollView
@@ -104,8 +104,8 @@ export function CheckoutScreen({
           </View>
           <Label style={[s.progressLabel, { color: c.blue }]}>Pickup details</Label>
         </View>
-        <Eyebrow style={{ color: c.blue, fontSize: 11 }}>GOOD THINGS, CLOSE TO HOME</Eyebrow>
-        <Label style={s.title}>Let’s make it yours.</Label>
+        <Eyebrow style={{ color: c.blue, fontSize: 11 }}>DEMO CHECKOUT</Eyebrow>
+        <Label style={s.title}>Pickup order</Label>
         <Label muted style={{ fontSize: 12, lineHeight: 20, marginTop: 7, marginBottom: 23 }}>
           Add your contact details for this campus pickup demo.
         </Label>

@@ -106,7 +106,7 @@ export function AppNavigator() {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator color={c.blue} />
         <Label muted style={{ marginTop: 12, fontSize: 12 }}>
-          Getting your campus favourites ready…
+          Loading store…
         </Label>
       </View>
     );

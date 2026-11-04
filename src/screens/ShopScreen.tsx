@@ -86,7 +86,7 @@ export function ShopScreen() {
               <Search size={18} color={c.muted} strokeWidth={1.8} />
               <TextInput
                 accessibilityLabel="Search products"
-                placeholder="Find your campus favourites"
+                placeholder="Search products"
                 placeholderTextColor="#8A94A5"
                 value={search}
                 onChangeText={setSearch}
@@ -125,10 +125,8 @@ export function ShopScreen() {
               onLayout={(event) => setCatalogOffset(event.nativeEvent.layout.y)}
             >
               <View>
-                <Eyebrow>WEAR IT. USE IT. MAKE IT YOURS.</Eyebrow>
-                <Label style={s.sectionTitle}>
-                  {search ? 'Search results' : 'Campus essentials'}
-                </Label>
+                <Eyebrow>PRODUCT CATALOG</Eyebrow>
+                <Label style={s.sectionTitle}>{search ? 'Search results' : 'Products'}</Label>
               </View>
               <Label muted style={{ fontSize: 12, marginBottom: 3 }}>
                 {upcoming ? 'Coming soon' : `${filtered.length} items`}
@@ -217,11 +215,11 @@ export function ShopScreen() {
           <View style={{ alignItems: 'center', paddingVertical: 50 }}>
             <Search size={30} color={c.muted} />
             <Label style={{ fontFamily: fonts.bold, fontSize: 19, marginTop: 16 }}>
-              {upcoming ? 'More coming soon' : 'No campus finds just yet'}
+              {upcoming ? 'More coming soon' : 'No matching products'}
             </Label>
             <Label muted style={{ textAlign: 'center', lineHeight: 22, marginTop: 10 }}>
               {upcoming
-                ? 'More campus favourites are on the way. Browse our T-shirts and mugs while you wait.'
+                ? 'Additional categories are not available yet. T-shirts and mugs are available now.'
                 : 'Try another search or choose a different category.'}
             </Label>
             <Pressable
@@ -252,7 +250,7 @@ export function ShopScreen() {
                 style={{ width: 27, height: 27 }}
               />
               <Label muted style={{ fontSize: 11, textAlign: 'center', lineHeight: 18 }}>
-                A little campus. Everywhere.{`\n`}KLUST Campus Store · Demonstration collection
+                KLUST Campus Store · Demo
               </Label>
             </View>
           ) : undefined
