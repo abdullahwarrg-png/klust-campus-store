@@ -2,6 +2,7 @@
 # (CSC 3563 MOBILE PROGRAMMING ASSIGNMENT)
 
 A campus merchandise shopping app built with **Expo, React Native, and TypeScript**. Discover twelve T-shirts and mugs, choose your colours and sizes, and complete a simulated pickup order.
+**This is a demonstration store.** No payment, email, real stock reservation, or pickup booking is created. Using fictional contact details. Shopping records stay in the current browser/device; clearing its storage removes them. The university is not represented as operating this demo.
 
 **[Open the live demo →](https://abdullahwarrg-png.github.io/klust-campus-store/)** · [Project report](docs/KLUST_Campus_Store_Report.docx) · [Validation notes](docs/VALIDATION.md)
 
@@ -22,7 +23,37 @@ A campus merchandise shopping app built with **Expo, React Native, and TypeScrip
 - Complete validated guest checkout for complimentary pickup at **Block 9 Foyer**.
 - Reopen saved receipts from Orders, including after a browser reload.
 
-**This is a demonstration store.** No payment, email, real stock reservation, or pickup booking is created. Use fictional contact details. Shopping records stay in the current browser/device; clearing its storage removes them. The university is not represented as operating this demo.
+## Architecture
+
+```text
+App.tsx                 Fonts, safe area, application shell
+src/components/         Shared controls, product cards, images, cart rows
+src/data/               Product catalog, category metadata, pickup location
+src/navigation/         Typed native stack and bottom tabs
+src/screens/            Shop, Product, Cart, Checkout, Receipt, Orders
+src/state/              Shared cart/order state and queued persistence
+src/theme/              Blue palette, typography, shared design values
+src/types/              Product, customer, cart, and order models
+src/utils/              Pure calculations, validation, restoration, reducer
+tests/                  Shopping logic tests
+scripts/                Browser walkthrough and temporary asset generator
+docs/                   Report, screenshots, verification, image guide
+```
+
+```mermaid
+flowchart LR
+  Shop --> Product[Product Details]
+  Product --> Bag
+  Bag --> Checkout
+  Checkout --> Receipt
+  Receipt --> Orders
+  Orders --> Receipt
+  Receipt --> Shop
+```
+
+Shop, Bag, and Orders use bottom tabs. Product Details, Checkout, and Receipt use a native stack. Routes pass identifiers; `useShop()` owns shared data. Prices use integer sen and are formatted as MYR only for display.
+
+Cart lines are identified by product, colour, and size. Writes to AsyncStorage run sequentially, and checkout saves the completed order before clearing the bag. Historical receipts retain item names and prices independently of the current catalog. Upcoming category metadata is separate from purchasable product types, so upcoming items cannot enter checkout.
 
 ## Run locally
 
@@ -73,37 +104,6 @@ npm run verify:web -- http://localhost:8082
 
 The walkthrough refreshes three screenshots and `docs/verification.json`. It tests category previews, filtering, variants, cart totals, reload persistence, validation, storage failure recovery, duplicate submission, receipts, pickup information, narrow layouts, desktop layout, keyboard focus, and runtime errors. The current record contains **19 passing logic tests and 13 passing browser scenario groups**. See [validation details and limits](docs/VALIDATION.md).
 
-## Architecture
-
-```text
-App.tsx                 Fonts, safe area, application shell
-src/components/         Shared controls, product cards, images, cart rows
-src/data/               Product catalog, category metadata, pickup location
-src/navigation/         Typed native stack and bottom tabs
-src/screens/            Shop, Product, Cart, Checkout, Receipt, Orders
-src/state/              Shared cart/order state and queued persistence
-src/theme/              Blue palette, typography, shared design values
-src/types/              Product, customer, cart, and order models
-src/utils/              Pure calculations, validation, restoration, reducer
-tests/                  Shopping logic tests
-scripts/                Browser walkthrough and temporary asset generator
-docs/                   Report, screenshots, verification, image guide
-```
-
-```mermaid
-flowchart LR
-  Shop --> Product[Product Details]
-  Product --> Bag
-  Bag --> Checkout
-  Checkout --> Receipt
-  Receipt --> Orders
-  Orders --> Receipt
-  Receipt --> Shop
-```
-
-Shop, Bag, and Orders use bottom tabs. Product Details, Checkout, and Receipt use a native stack. Routes pass identifiers; `useShop()` owns shared data. Prices use integer sen and are formatted as MYR only for display.
-
-Cart lines are identified by product, colour, and size. Writes to AsyncStorage run sequentially, and checkout saves the completed order before clearing the bag. Historical receipts retain item names and prices independently of the current catalog. Upcoming category metadata is separate from purchasable product types, so upcoming items cannot enter checkout.
 
 ## Deployment
 
