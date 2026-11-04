@@ -3,7 +3,10 @@ const fs = require('node:fs/promises');
 const assert = require('node:assert/strict');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
-const shots = root + '/docs/screenshots';
+const shots = process.env.VERIFY_OUTPUT_DIR || root + '/docs/screenshots';
+const reportPath = process.env.VERIFY_OUTPUT_DIR
+  ? path.join(shots, 'verification.json')
+  : root + '/docs/verification.json';
 const url = process.argv[2] || 'http://localhost:8082';
 const checks = [];
 const key = '@klust/campus-store/v1';
@@ -153,8 +156,8 @@ async function main() {
   await button('Explore the collection').click();
   await page.setViewportSize({ width: 320, height: 760 });
   await waitText('Campus essentials');
-  await page.screenshot({ path: root + '/docs/screenshots/small-phone-check.png' });
-  await fs.unlink(root + '/docs/screenshots/small-phone-check.png');
+  await page.screenshot({ path: shots + '/small-phone-check.png' });
+  await fs.unlink(shots + '/small-phone-check.png');
   const overflow = await page.evaluate(() => ({
     body: document.body.scrollWidth,
     viewport: innerWidth,
@@ -179,7 +182,7 @@ async function main() {
   checks.push('Desktop layout and keyboard focus remain usable');
   checks.push('Block 9 Foyer shown on shop, bag, checkout, and receipt');
   await fs.writeFile(
-    root + '/docs/verification.json',
+    reportPath,
     JSON.stringify(
       {
         viewport: '390 × 900, DPR 2; narrow check 320 × 760',

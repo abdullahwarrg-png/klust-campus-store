@@ -15,6 +15,10 @@
 - Block 9 Foyer is visible on Shop, Bag, Checkout, and Receipt.
 - Desktop layout and keyboard focus are checked in addition to the mobile viewports.
 
+## Published demo verification
+
+On 4 November 2026, the same 13 scenario groups passed against https://abdullahwarrg-png.github.io/klust-campus-store/. Direct navigation, reload persistence, asset loading, and a fictional RM 127.00 checkout succeeded without runtime exceptions. GitHub Actions completed the build and Pages deployment successfully.
+
 ## Browser evidence
 
 The walkthrough bought two Cloud Heritage Tees in size M at RM 49.00 each and one Blue Campus Mug at RM 29.00, totaling RM 127.00. It first exercised additional size/colour entries and removed them, then verified bag persistence, form corrections, storage failure recovery, exactly one order after repeated taps, and persistent order history.
