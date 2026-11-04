@@ -16,14 +16,6 @@ A campus merchandise shopping app built with **Expo, React Native, and TypeScrip
 | <img src="docs/screenshots/shop.png" width="240" alt="Shop with KLUST collection and category filters"> | <img src="docs/screenshots/product-details.png" width="240" alt="Heritage Tee colour and size selection"> | <img src="docs/screenshots/checkout.png" width="240" alt="Guest checkout with fictional contact details"> |
 
 
-- Light theme with blue accents, phone-width layouts, and inputs sized to avoid automatic mobile focus zoom.
-- Search, category filtering, and featured or price sorting across **eight T-shirts and four mugs**.
-- Select **More · Coming soon** to preview upcoming campus favourites.
-- Choose matching product colour images, T-shirt sizes S–XXL, and quantities.
-- Build a persistent bag with separate colour/size variants and a ten-unit limit per variant.
-- Complete validated guest checkout for complimentary pickup at **Block 9 Foyer**.
-- Reopen saved receipts from Orders, including after a browser reload.
-
 ## Architecture
 
 ```text
