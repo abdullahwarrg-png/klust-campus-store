@@ -1,0 +1,50 @@
+{
+  "viewport": "390 × 900, DPR 2; narrow check 320 × 760",
+  "checks": [
+    "Pens and Caps coming soon, no purchases, and available-catalog recovery",
+    "Mug category and ascending price order",
+    "Combined search filters and no-results recovery",
+    "Required size, variant merging, size/colour separation, quantity updates, removal, MYR totals",
+    "Mug-specific controls and persisted bag after reload",
+    "Required-field, email, and phone validation with correction",
+    "Failed order save preserves the bag and allows retry",
+    "Repeated submission creates one durable order and clears the bag",
+    "Receipt, order history links, and history persistence after reload",
+    "320 px layout has no horizontally clipped visible controls",
+    "No browser runtime errors",
+    "Desktop layout and keyboard focus remain usable",
+    "Block 9 Foyer shown on shop, bag, checkout, and receipt"
+  ],
+  "errors": [],
+  "order": {
+    "id": "KL-MW1R1YJM-ZPW",
+    "createdAt": "2026-11-04T06:42:32.098Z",
+    "customer": {
+      "name": "Aina Rahman",
+      "email": "aina.rahman@example.com",
+      "phone": "012 345 6789"
+    },
+    "items": [
+      {
+        "key": "heritage-tee:Cloud:M",
+        "productId": "heritage-tee",
+        "colour": "Cloud",
+        "size": "M",
+        "quantity": 2,
+        "name": "The Heritage Tee",
+        "price": 4900,
+        "category": "tshirts"
+      },
+      {
+        "key": "campus-mug:Blue:standard",
+        "productId": "campus-mug",
+        "colour": "Blue",
+        "quantity": 1,
+        "name": "The Campus Mug",
+        "price": 2900,
+        "category": "mugs"
+      }
+    ],
+    "total": 12700
+  }
+}
