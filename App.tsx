@@ -16,7 +16,7 @@ export default function App() {
   });
   return (
     <SafeAreaProvider>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <View style={s.canvas}>
         <View
           testID="store-app"

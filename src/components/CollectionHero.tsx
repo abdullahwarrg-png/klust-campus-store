@@ -30,7 +30,7 @@ export function CollectionHero({ onExplore }: { onExplore: () => void }) {
           style={({ pressed }) => [s.button, pressed && { opacity: 0.8 }]}
         >
           <Label style={s.buttonLabel}>Browse products</Label>
-          <ArrowRight size={17} color={c.white} strokeWidth={1.8} />
+          <ArrowRight size={17} color={c.navy} strokeWidth={1.8} />
         </Pressable>
         <Label style={s.note}>Guest checkout · Campus pickup</Label>
       </View>
@@ -39,7 +39,7 @@ export function CollectionHero({ onExplore }: { onExplore: () => void }) {
 }
 
 const s = StyleSheet.create({
-  hero: { borderRadius: 26, overflow: 'hidden', backgroundColor: c.background },
+  hero: { borderRadius: 26, overflow: 'hidden', backgroundColor: c.navy },
   artwork: {
     height: 254,
     backgroundColor: '#E3EDF8',
@@ -59,7 +59,7 @@ const s = StyleSheet.create({
     gap: 6,
     zIndex: 1,
   },
-  editionDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: c.action },
+  editionDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: c.blue },
   editionLabel: { fontFamily: fonts.bold, fontSize: 10, letterSpacing: 1.6, color: c.navy },
   halo: {
     position: 'absolute',
@@ -84,11 +84,11 @@ const s = StyleSheet.create({
     marginTop: 18,
     borderRadius: 14,
     paddingHorizontal: 18,
-    backgroundColor: c.action,
+    backgroundColor: c.white,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  buttonLabel: { fontFamily: fonts.bold, fontSize: 14, color: c.white },
+  buttonLabel: { fontFamily: fonts.bold, fontSize: 14, color: c.navy },
   note: { fontSize: 11, color: '#AABFD9', textAlign: 'center', marginTop: 11 },
 });

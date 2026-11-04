@@ -37,7 +37,7 @@ async function main() {
           await page
             .getByTestId('store-app')
             .evaluate((el) => getComputedStyle(el).backgroundColor),
-          'rgb(14, 24, 41)',
+          'rgb(255, 255, 255)',
         );
         const search = page.getByRole('textbox', { name: 'Search products' });
         assert.equal(await search.evaluate((el) => getComputedStyle(el).fontSize), '16px');
@@ -66,7 +66,7 @@ async function main() {
         await assertViewport();
         assert.deepEqual(errors, []);
         checks.push(
-          `${name}: ${width}px full-width dark layout, bag, checkout, and input focus at 1×`,
+          `${name}: ${width}px full-width light layout, bag, checkout, and input focus at 1×`,
         );
         await context.close();
       }

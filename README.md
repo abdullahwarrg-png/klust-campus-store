@@ -14,7 +14,7 @@ A campus merchandise shopping demo built with **Expo, React Native, and TypeScri
 
 ## What you can try
 
-- Dark theme with blue accents, phone-width layouts, and inputs sized to avoid automatic mobile focus zoom.
+- Light theme with blue accents, phone-width layouts, and inputs sized to avoid automatic mobile focus zoom.
 - Search, category filtering, and featured or price sorting across **eight T-shirts and four mugs**.
 - Select **More · Coming soon** to preview upcoming campus favourites.
 - Choose matching product colour images, T-shirt sizes S–XXL, and quantities.

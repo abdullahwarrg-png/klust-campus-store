@@ -266,7 +266,7 @@ const s = StyleSheet.create({
   progressDone: {
     width: 21,
     height: 21,
-    backgroundColor: c.paleGreen,
+    backgroundColor: c.green,
     borderRadius: 11,
     justifyContent: 'center',
     alignItems: 'center',
